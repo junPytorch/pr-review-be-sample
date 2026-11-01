@@ -3,9 +3,14 @@ import { Router } from "express";
 import { findUserById } from "../repositories/userRepository.js";
 import type { User } from "../types/user.js";
 
-// API レスポンスの形に変換する
+// API レスポンスの形に変換する（avatarUrl は値がある場合だけ含める）
 export function toUserResponse(user: User) {
-  return { id: user.id, name: user.name, email: user.email };
+  return {
+    id: user.id,
+    name: user.name,
+    email: user.email,
+    ...(user.avatarUrl !== undefined ? { avatarUrl: user.avatarUrl } : {}),
+  };
 }
 
 export const usersRouter = Router();
