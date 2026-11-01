@@ -18,7 +18,8 @@
 {
   "id": "1",
   "name": "Alice",
-  "email": "alice@example.com"
+  "email": "alice@example.com",
+  "avatarUrl": "https://example.com/avatars/alice.png"
 }
 ```
 
@@ -27,6 +28,7 @@
 | `id` | string | ユーザー ID |
 | `name` | string | 名前 |
 | `email` | string | メールアドレス |
+| `avatarUrl` | string（省略可） | アバター画像の URL。設定されていないユーザーではフィールド自体を含めない |
 
 **404 Not Found**
 
